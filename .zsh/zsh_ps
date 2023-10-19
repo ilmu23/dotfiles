@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+function git_branch()
+{
+	branch=$(git branch 2> /dev/null | awk 'BEGIN{FD="/"} {print $NF}')
+	if [[ $branch == "" ]];
+	then
+		:
+	else
+		echo ''$branch ''
+	fi
+}
+
+setopt prompt_subst
+
+PROMPT='%B%F{cyan}%n%F{red}@%F{blue}%m%f%b %F{magenta}%1~%f %F{green}$(git_branch)%f%B%F{red}$%f%b '
