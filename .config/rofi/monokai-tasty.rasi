@@ -1,0 +1,124 @@
+configuration {
+	run {
+		display-name:	"$ ";
+	}
+}
+
+* {
+  	border:		0;
+	margin:		0;
+	padding:	0;
+	spacing:	0;
+
+	active-background:	@background;
+	active-foreground:	#a4e400;
+	normal-background:	@background;
+	normal-foreground:	#62d8f1;
+	urgent-background:	@background;
+	urgent-foreground:	#fc1a70;
+
+	selected-active-background:	@background;
+	selected-active-foreground:	#a4e400;
+	selected-normal-background:	@background;
+	selected-normal-foreground:	@62d8f1;
+	selected-urgent-background:	@background;
+	selected-urgent-foreground:	#fc1a70;
+
+	background-color:	@background;
+	border-color:		@background;
+	transparent:		#00000000;
+	background:			#000000e0;
+	foreground:			#c4c4c4;
+	spacing:			2;
+}
+
+window {
+	transparency:		"real";
+	background-color:	@background;
+	border-radius:		16px;
+}
+
+mainbox {
+	children:			[inputbar, listview];
+	background-color:	@transparent;
+}
+
+inputbar {
+	spacing:			0;
+	padding:			1px;
+	children:			[prompt, entry];
+	background-color:	@transparent;
+}
+
+entry {
+	spacing:			0;
+	text-color:			@normal-foreground;
+	placeholder:		"";
+	background-color:	@transparent;
+}
+
+prompt {
+	spacing:			0;
+	text-color: 		@urgent-foreground;
+	background-color:	@transparent;
+}
+
+listview {
+	lines: 				8;
+	border:				0px 0px 0px;
+	spacing:			2px;
+	fixer-height:		0;
+	border-color:		@border-color;
+	background-color:	@transparent;
+	scrollbar:			false;
+}
+
+element {
+	children: [element-text];
+}
+
+element-text {
+	padding:			12px;
+	text-color:			@foreground;
+	background-color:	@transparent;
+}
+
+element-text selected {
+	text-color:	@normal-foreground;
+}
+
+element.normal.normal {
+	background-color:	@transparent;
+}
+
+element.normal.urgent {
+	background-color:	@transparent;
+}
+
+element.normal.active {
+	background-color:	@transparent;
+}
+
+element.selected.normal {
+	background-color:	@transparent;
+}
+
+element.selected.urgent {
+    background-color:	@transparent;
+}
+
+element.selected.active {
+    background-color:	@transparent;
+}
+
+element.alternate.normal {
+	background-color:	@transparent;
+}
+
+element.alternate.urgent {
+    background-color:	@transparent;
+}
+
+element.alternate.active {
+    background-color:	@transparent;
+}
