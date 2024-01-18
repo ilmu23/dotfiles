@@ -2,7 +2,7 @@
 
 function git_branch()
 {
-	branch=$(git branch 2> /dev/null | awk 'BEGIN{FD="/"} {print $NF}')
+	branch=$(git branch 2> /dev/null | grep \* | awk 'BEGIN{FD="/"} {print $NF}')
 	if [[ $branch == "" ]];
 	then
 		:
