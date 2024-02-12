@@ -35,4 +35,6 @@ return require('packer').startup(function(use)
 	use "nvim-tree/nvim-web-devicons"
 	use "lewis6991/gitsigns.nvim"
 	use "nvim-lualine/lualine.nvim"
+	use "theprimeagen/harpoon"
+	use "tpope/vim-fugitive"
 end)

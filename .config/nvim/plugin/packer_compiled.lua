@@ -109,11 +109,6 @@ _G.packer_plugins = {
     path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
-  ["feline.nvim"] = {
-    loaded = true,
-    path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/feline.nvim",
-    url = "https://github.com/freddiehaddad/feline.nvim"
-  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -123,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
+  },
+  harpoon = {
+    loaded = true,
+    path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/harpoon",
+    url = "https://github.com/theprimeagen/harpoon"
   },
   ["lsp-zero.nvim"] = {
     loaded = true,
@@ -183,6 +183,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-fugitive"] = {
+    loaded = true,
+    path = "/home/ilmu/.local/share/nvim/site/pack/packer/start/vim-fugitive",
+    url = "https://github.com/tpope/vim-fugitive"
   }
 }
 
