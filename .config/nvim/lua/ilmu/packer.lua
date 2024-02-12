@@ -6,11 +6,11 @@ return require('packer').startup(function(use)
 		'nvim-telescope/telescope.nvim', tab = '0.1.4',
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
-	use 'tanvirtin/monokai.nvim'
+	use 'scottmckendry/cyberdream.nvim'
 	use {
 		'nvim-treesitter/nvim-treesitter',
 		run = function()
-			local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+			local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
 			ts_update()
 		end,
 	}
@@ -31,10 +31,10 @@ return require('packer').startup(function(use)
 			{ 'rafamadriz/friendly-snippets'},
 		}
 	}
-	use "Diogo-ss/42-header.nvim"
-	use "nvim-tree/nvim-web-devicons"
-	use "lewis6991/gitsigns.nvim"
-	use "nvim-lualine/lualine.nvim"
-	use "theprimeagen/harpoon"
-	use "tpope/vim-fugitive"
+	use 'Diogo-ss/42-header.nvim'
+	use 'nvim-tree/nvim-web-devicons'
+	use 'lewis6991/gitsigns.nvim'
+	use 'nvim-lualine/lualine.nvim'
+	use 'theprimeagen/harpoon'
+	use 'tpope/vim-fugitive'
 end)

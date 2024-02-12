@@ -1,4 +1,4 @@
-vim.opt.guicursor = ""
+vim.opt.guicursor = ''
 
 vim.opt.nu = true
 vim.opt.rnu = true
@@ -21,18 +21,18 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = '80'
 
 vim.opt.updatetime = 50
 
 vim.opt.showmode = false
 
-local header = require("42header")
+local header = require('42header')
 header.setup({
 	lengt = 80,
 	margin = 5,
 	default_map = true,
 	auto_update = true,
-	user = "ivalimak",
-	mail = "ivalimak@student.hive.fi",
+	user = 'ivalimak',
+	mail = 'ivalimak@student.hive.fi',
 })
