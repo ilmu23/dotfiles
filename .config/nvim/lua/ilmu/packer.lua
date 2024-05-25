@@ -37,4 +37,8 @@ return require('packer').startup(function(use)
 	use 'nvim-lualine/lualine.nvim'
 	use 'theprimeagen/harpoon'
 	use 'tpope/vim-fugitive'
+	use {
+		'uloco/bluloco.nvim',
+		requires = { 'rktjmp/lush.nvim' }
+	}
 end)

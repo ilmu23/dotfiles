@@ -25,4 +25,6 @@ vim.keymap.set('n', '<leader>/', '0i//<Esc>$j')
 
 vim.keymap.set('n', '<leader>x', '<cmd>!chmod +x %<CR>', { silent = true })
 
+vim.keymap.set('n', '<leader>m', vim.cmd.Man)
+
 vim.keymap.set('n', 'Q', '<nop>')
