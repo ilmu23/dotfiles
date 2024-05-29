@@ -27,6 +27,10 @@ vim.opt.updatetime = 50
 
 vim.opt.showmode = false
 
+vim.g.c_syntax_for_h = 1
+vim.g.c_functions = 1
+vim.g.c_function_pointers = 1
+
 local header = require('42header')
 header.setup({
 	lengt = 80,
