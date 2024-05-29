@@ -1,15 +1,9 @@
 [font]
 builtin_box_drawing = true
-size = 10.0
+size = 9.0
 
 [font.normal]
 family = "MesloLGM Nerd Font"
-
-[font.bold_italic]
-style = "Bold"
-
-[font.italic]
-style = "Bold"
 
 [[keyboard.bindings]]
 action = "SpawnNewInstance"
@@ -18,7 +12,7 @@ mods = "Control"
 
 [window]
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.85
 
 [window.padding]
 x = 16
@@ -30,20 +24,20 @@ foreground	=	'#FFFFFF'
 
 [colors.normal]
 black	=	'#000000'
-red		=	'#FC1A70'
-green	=	'#A4E400'
-yellow	=	'#FFFF87'
-blue	=	'#62D8F1'
-magenta	=	'#FF9700'
-cyan	=	'#AF87FF'
-white	=	'#C4C4C4'
+blue	=	'#3476FF'
+cyan	=	'#4483AA'
+green	=	'#25A45C'
+magenta	=	'#7A82DA'
+red		=	'#FC2F52'
+white	=	'#CDD4E0'
+yellow	=	'#FF936A'
 
 [colors.bright]
 black	=	'#000000'
-red		=	'#FC1A70'
-green	=	'#A4E400'
-yellow	=	'#FFFF87'
-blue	=	'#62D8F1'
-magenta	=	'#FF9700'
-cyan	=	'#AF87FF'
-white	=	'#C4C4C4'
+blue	=	'#10B1FE'
+cyan	=	'#5FB9BC'
+green	=	'#3FC56B'
+magenta	=	'#FF78F8'
+red		=	'#FF6480'
+white	=	'#FFFFFF'
+yellow	=	'#F9C859'
