@@ -1,6 +1,5 @@
-local cyberdream = require('lualine.themes.cyberdream')
 require('lualine').setup {
-	options = { 
+	options = {
 		theme = 'auto',
 		section_separators = '',
 		component_separators = '',

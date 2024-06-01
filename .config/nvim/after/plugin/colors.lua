@@ -1,6 +1,6 @@
 function ReColor(color)
 	color = color or 'bluloco'
-	require('cyberdream').setup({
+	require('bluloco').setup({
 		style = 'dark',
 		italics = false,
 		guicursor = true,

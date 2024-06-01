@@ -40,4 +40,5 @@ return require('packer').startup(function(use)
 		'uloco/bluloco.nvim',
 		requires = { 'rktjmp/lush.nvim' }
 	}
+	use 'stevearc/oil.nvim'
 end)
