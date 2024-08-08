@@ -19,18 +19,20 @@ key[PageUp]="${terminfo[kpp]}"
 key[PageDown]="${terminfo[knp]}"
 key[Shift-Tab]="${terminfo[kcbt]}"
 
-[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
-[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
-[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
-[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}"  backward-delete-char
-[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"     delete-char
-[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"         up-line-or-history
-[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"       down-line-or-history
-[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"       backward-char
-[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"      forward-char
-[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"     beginning-of-buffer-or-history
-[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
-[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
+bindkey -v
+
+[[ -n "${key[Home]}"      ]] && bindkey -v -- "${key[Home]}"       beginning-of-line
+[[ -n "${key[End]}"       ]] && bindkey -v -- "${key[End]}"        end-of-line
+[[ -n "${key[Insert]}"    ]] && bindkey -v -- "${key[Insert]}"     overwrite-mode
+[[ -n "${key[Backspace]}" ]] && bindkey -v -- "${key[Backspace]}"  backward-delete-char
+[[ -n "${key[Delete]}"    ]] && bindkey -v -- "${key[Delete]}"     delete-char
+[[ -n "${key[Up]}"        ]] && bindkey -v -- "${key[Up]}"         up-line-or-history
+[[ -n "${key[Down]}"      ]] && bindkey -v -- "${key[Down]}"       down-line-or-history
+[[ -n "${key[Left]}"      ]] && bindkey -v -- "${key[Left]}"       backward-char
+[[ -n "${key[Right]}"     ]] && bindkey -v -- "${key[Right]}"      forward-char
+[[ -n "${key[PageUp]}"    ]] && bindkey -v -- "${key[PageUp]}"     beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"  ]] && bindkey -v -- "${key[PageDown]}"   end-of-buffer-or-history
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -v -- "${key[Shift-Tab]}"  reverse-menu-complete
 
 if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	autoload -Uz add-zle-hook-widget
@@ -47,19 +49,24 @@ alias startx='startx -logverbose -1'
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
 alias src='source ~/.zshrc'
+alias fmake='make -j 32'
+alias dbmake='compiledb make'
+alias remake='make fclean && fmake'
+alias helgrind='valgrind --tool=helgrind'
+alias rrr='rr /home/ilmu/.local/share/rr/latest-trace'
 alias mkdir='mkdir -p'
 alias cd..='cd ..'
 alias clr='clear'
 alias :q='exit'
 
 # Dircolors
-d=.dircolors
-test -r $d && eval "$(dircolors $d)"
+export LS_COLORS=`dircolors | head -n 1 | sed s/LS_COLORS=\'// | sed s/\'\;//`
 
 # Profile
-if [ -f ~/.zprofile ]; then
-	. ~/.zprofile
-fi
+source ~/.zprofile
 
 # PS
 source ~/.zsh/zsh_ps
+
+# Neovim
+alias vim='nvim'
