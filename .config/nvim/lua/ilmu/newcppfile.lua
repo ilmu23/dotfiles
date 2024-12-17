@@ -6,14 +6,7 @@ autocmd('BufNewFile', {
 	group = newcppfile,
 	pattern = '*.cpp',
 	callback = function()
-		vim.api.nvim_paste('// ███████╗████████╗     ██████╗ ██╗   ██╗████████╗ ██████╗██╗  ██╗ █████╗ ██████╗\n', true, -1)
-		vim.api.nvim_paste('// ██╔════╝╚══██╔══╝     ██╔══██╗██║   ██║╚══██╔══╝██╔════╝██║  ██║██╔══██╗██╔══██╗\n', true, -1)
-		vim.api.nvim_paste('// █████╗     ██║        ██████╔╝██║   ██║   ██║   ██║     ███████║███████║██████╔╝\n', true, -1)
-		vim.api.nvim_paste('// ██╔══╝     ██║        ██╔═══╝ ██║   ██║   ██║   ██║     ██╔══██║██╔══██║██╔══██╗\n', true, -1)
-		vim.api.nvim_paste('// ██║        ██║███████╗██║     ╚██████╔╝   ██║   ╚██████╗██║  ██║██║  ██║██║  ██║\n', true, -1)
-		vim.api.nvim_paste('// ╚═╝        ╚═╝╚══════╝╚═╝      ╚═════╝    ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═╝\n', true, -1)
-		vim.api.nvim_paste('//\n', true, -1)
-		vim.api.nvim_paste('// <<' .. vim.fn.expand('%:t') .. '>>\n\n', true, -1)
+		vim.cmd.Putheader()
 	end,
 	desc = 'Initialize a new .cpp file with a putchar header'
 })
