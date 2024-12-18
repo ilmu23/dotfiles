@@ -30,3 +30,4 @@ vim.keymap.set('n', '<leader>m', vim.cmd.Man)
 vim.keymap.set('n', 'Q', '<nop>')
 
 vim.keymap.set('n', '<leader>h', vim.cmd.Putheader)
+vim.keymap.set('n', '<leader>c', function() vim.cmd.ClassGen(vim.fn.expand('%:t')) end)

@@ -16,5 +16,5 @@ autocmd('BufNewFile', {
 			'#endif'})
 		vim.api.nvim_win_set_cursor(0, {13, 0})
 	end,
-	desc = 'Initialize a new .h file with a putchar header'
+	desc = 'Initialize a new .h file'
 })

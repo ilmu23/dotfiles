@@ -7,27 +7,20 @@ autocmd('BufNewFile', {
 	pattern = '*.hpp',
 	callback = function(args)
 		local guard = string.gsub(string.upper(args.file:match('[^/]+$')), '%p', '_')
-		local cname = vim.fn.expand('%:t1'):match('(.+).hpp')
+		local cname = args.file:match('(.+).hpp')
 		vim.cmd.Putheader()
 		vim.api.nvim_buf_set_lines(0, -1, -1, 0, {
 			'#ifndef ' .. guard,
 			'# define ' .. guard,
 			'',
 			'',
-			'class ' .. cname,
-			'{',
-			'\tprivate:',
-			'',
-			'',
-			'\tpublic:',
-			'\t\t' .. cname .. '(void);',
-			'\t\t' .. cname .. '(const ' .. cname .. ' &copy);',
-			'\t\t' .. cname .. '&operator=(const ' .. cname .. ' &copy);',
-			'\t\t~' .. cname .. '(void);',
-			'};',
 			'',
 			'#endif'})
-		vim.api.nvim_win_set_cursor(0, {18, 0})
+		vim.api.nvim_win_set_cursor(0, {14, 0})
+		if string.match(cname:sub(1, 1), "%u") then
+			vim.cmd.ClassGen(vim.fn.expand('%:t'))
+			vim.api.nvim_win_set_cursor(0, {18, 0})
+		end
 	end,
-	desc = 'Initialize a new .hpp file with a putchar header, header guard and class template'
+	desc = 'Initialize a new .hpp file'
 })

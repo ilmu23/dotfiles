@@ -8,5 +8,5 @@ autocmd('BufNewFile', {
 	callback = function()
 		vim.cmd.Putheader()
 	end,
-	desc = 'Initialize a new .c file with a putchar header'
+	desc = 'Initialize a new .c file'
 })

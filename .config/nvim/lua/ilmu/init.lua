@@ -1,5 +1,6 @@
 require('ilmu.set')
 require('ilmu.remap')
+require('ilmu.ClassGen')
 require('ilmu.Putheader')
 require('ilmu.newcfile')
 require('ilmu.newhfile')
