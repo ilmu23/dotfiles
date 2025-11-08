@@ -1,11 +1,10 @@
 function ReColor(color)
-	color = color or 'bluloco'
-	require('bluloco').setup({
-		style = 'dark',
-		italics = false,
-		guicursor = true,
-	})
+	color = color or 'aurora'
+	vim.g.aurora_bold = 1
+	vim.g.aurora_italic = 1
+	vim.g.aurora_transparent = 1
 	vim.cmd.colorscheme(color)
+	vim.api.nvim_set_hl(0, "@constant.builtin", { fg = '#e73c50' })
 	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
 	vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
 	vim.api.nvim_set_hl(0, "LineNr", { bg = "none" })

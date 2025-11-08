@@ -19,6 +19,7 @@ lsp_zero.on_attach(function(client, bufnr)
 	vim.keymap.set('n', 'gt', function() vim.lsp.buf.type_definition() end, opts)
 	vim.keymap.set('n', 'gr', function() vim.lsp.buf.references() end, opts)
 	vim.keymap.set('n', '<F2>', function() vim.lsp.buf.rename() end, opts)
+	vim.keymap.set('n', 'K', function() vim.lsp.buf.hover { border = "rounded" } end, opts)
 end)
 
 local cmp = require('cmp')

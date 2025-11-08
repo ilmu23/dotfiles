@@ -30,15 +30,12 @@ return require('packer').startup(function(use)
 			{ 'rafamadriz/friendly-snippets'},
 		}
 	}
-	use 'Diogo-ss/42-header.nvim'
 	use 'nvim-tree/nvim-web-devicons'
 	use 'lewis6991/gitsigns.nvim'
 	use 'nvim-lualine/lualine.nvim'
 	use 'theprimeagen/harpoon'
 	use 'tpope/vim-fugitive'
-	use {
-		'uloco/bluloco.nvim',
-		requires = { 'rktjmp/lush.nvim' }
-	}
+	use 'rktjmp/lush.nvim'
 	use 'stevearc/oil.nvim'
+	use 'ray-x/aurora'
 end)

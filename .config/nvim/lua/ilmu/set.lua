@@ -21,8 +21,6 @@ vim.opt.termguicolors = true
 
 vim.opt.scrolloff = 8
 
-vim.opt.colorcolumn = '81'
-
 vim.opt.updatetime = 50
 
 vim.opt.showmode = false
@@ -31,12 +29,6 @@ vim.g.c_syntax_for_h = 1
 vim.g.c_functions = 1
 vim.g.c_function_pointers = 1
 
-local header = require('42header')
-header.setup({
-	lengt = 80,
-	margin = 5,
-	default_map = true,
-	auto_update = true,
-	user = 'ivalimak',
-	mail = 'ivalimak@student.hive.fi',
+vim.diagnostic.config({
+	virtual_lines = true,
 })
