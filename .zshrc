@@ -42,9 +42,6 @@ if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
 	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
 fi
 
-# Fuck your logs
-alias startx='startx -logverbose -1'
-
 # Important aliases
 alias ls='ls --color=auto'
 alias lsa='ls -alh'
@@ -53,20 +50,14 @@ alias fmake='make -j 32'
 alias dbmake='compiledb make'
 alias remake='make fclean && fmake'
 alias helgrind='valgrind --tool=helgrind'
-alias rrr='rr /home/ilmu/.local/share/rr/latest-trace'
 alias mkdir='mkdir -p'
 alias cd..='cd ..'
 alias clr='clear'
+alias vim='nvim'
 alias :q='exit'
 
 # Dircolors
 export LS_COLORS=`dircolors | head -n 1 | sed s/LS_COLORS=\'// | sed s/\'\;//`
 
-# Profile
-source ~/.zprofile
-
 # PS
 source ~/.zsh/zsh_ps
-
-# Neovim
-alias vim='nvim'

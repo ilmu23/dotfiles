@@ -1,8 +1,0 @@
-cconfiguration {
-    modi: "run";
-    font: "Inconsolata 12";
-}
-
-onfiguration {
-}
-@import "~/.config/rofi/monokai-tasty.rasi"
