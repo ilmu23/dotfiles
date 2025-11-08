@@ -44,6 +44,7 @@ fi
 
 # Important aliases
 alias ls='ls --color=auto'
+alias ip='ip -c'
 alias lsa='ls -alh'
 alias src='source ~/.zshrc'
 alias fmake='make -j 32'
@@ -61,3 +62,7 @@ export LS_COLORS=`dircolors | head -n 1 | sed s/LS_COLORS=\'// | sed s/\'\;//`
 
 # PS
 source ~/.zsh/zsh_ps
+
+# virsh
+alias virsys='virsh -c qemu:///system'
+alias viruser='virsh -c qemu:///session'

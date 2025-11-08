@@ -1,0 +1,77 @@
+// -*- mode: jsonc -*-
+{
+	"layer": "top",
+	"position": "top",
+	"height": 16,
+	"spacing": 4,
+	"modules-left": [
+		"hyprland/workspaces",
+	],
+	"modules-center": [
+		"clock",
+	],
+	"modules-right": [
+		"temperature#cpu",
+		"temperature#gpu_edge",
+		"temperature#gpu_memory",
+		"mpd",
+		"pulseaudio",
+	],
+	"hyprland/workspaces": {
+		"format": "{id}",
+	},
+	"clock": {
+		"locale": "en_GB.UTF-8",
+		"tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"calendar": {
+			"mode-mon-col": 3,
+			"weeks-pos": "right",
+			"format": {
+				"months": "<span color='#52d3a7'><b>{}</b></span>",
+				"weeks": "<span color='#b34d2c'><b>{}</b></span>",
+				"weekdays": "<span color='#2fa7bc'><b>{}</b></span>",
+				"today": "<span color='#52d3a7'><b>{}</b></span>",
+			},
+		},
+		"actions": {
+			"on-click": "mode",
+		},
+	},
+	"temperature#cpu": {
+		"interval": 5,
+		"tooltip-format": "CPU",
+		"critical-threshold": 80,
+		"format": "<span color='#52d3a7'>  </span>   {temperatureC}°C",
+		"format-critical": "<span color='#52d3a7'></span>  <span color='#b34d2c'></span>   {temperatureC}°C",
+		"hwmon-path": "/sys/devices/pci0000:00/0000:00:18.3/hwmon/hwmon2/temp1_input",
+	},
+	"temperature#gpu_edge": {
+		"interval": 5,
+		"tooltip-format": "GPU",
+		"critical-threshold": 80,
+		"format": "<span color='#52d3a7'>󰢮</span>   {temperatureC}°C",
+		"format-critical": "<span color='#b34d2c'>󰢮</span>   {temperatureC}°C",
+		"hwmon-path": "/sys/devices/pci0000:00/0000:00:03.1/0000:07:00.0/0000:08:00.0/0000:09:00.0/hwmon/hwmon1/temp1_input",
+	},
+	"temperature#gpu_memory": {
+		"interval": 5,
+		"tooltip-format": "VRAM",
+		"critical-threshold": 80,
+		"format": "<span color='#52d3a7'>󰾲</span>   {temperatureC}°C",
+		"format-critical": "<span color='#b34d2c'>󰾲</span>   {temperatureC}°C",
+		"hwmon-path": "/sys/devices/pci0000:00/0000:00:03.1/0000:07:00.0/0000:08:00.0/0000:09:00.0/hwmon/hwmon1/temp3_input",
+	},
+	"mpd": {
+		"format": "<span color=\"#52d3a7\"></span>   {artist} - {title}",
+		"format-stopped": "<span color=\"#b34d2c\"></span>   Stopped",
+		"unknown-tag": "N/A",
+		"interval": 5,
+		"tooltip-format": "MPD (connected)",
+		"tooltip-format-disconnected": "MPD (disconnected)",
+	},
+	"pulseaudio": {
+		"format": "<span color=\"#52d3a7\"></span>    {volume}%",
+		"format-muted": "<span color=\"#b34d2c\"></span>    Muted",
+		"on-click": "pavucontrol",
+	},
+}
